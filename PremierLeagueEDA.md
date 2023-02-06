@@ -756,28 +756,6 @@ engleske nacionalnosti) igrači ili strani igrači
 #### Vizualizacija podataka
 
   
-Pomoću piecharta prikazat ćemo udio igrača iz pojedine države.
-
-``` r
-pieChart <- tablica%>%
-            filter(!is.na(Nation))%>%
-            count(Nation)%>%
-            hchart("pie", innerSize = '50%', showInLegend = F,
-            hcaes(x = Nation, y = (n/nrow(tablica) * 100)))%>%
-            hc_add_theme(hc_theme_flat())%>%
-            hc_title(text = "Proportion of different Nations")%>%
-            hc_credits(style = list(fontSize = "12px"))
-
-pieChart
-```
-
-    ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
-
-<div id="htmlwidget-c95a90dea2c953350472" style="width:672px;height:480px;" class="highchart html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c95a90dea2c953350472">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Proportion of different Nations"},"yAxis":{"title":{"text":["(","n/nrow(tablica) * 100"]},"type":"linear"},"credits":{"enabled":false,"style":{"fontSize":"12px"}},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"Nation":"","n":3,"y":0.434153400868307,"name":""},{"Nation":"al ALB","n":1,"y":0.144717800289436,"name":"al ALB"},{"Nation":"ao ANG","n":1,"y":0.144717800289436,"name":"ao ANG"},{"Nation":"ar ARG","n":8,"y":1.15774240231548,"name":"ar ARG"},{"Nation":"at AUT","n":1,"y":0.144717800289436,"name":"at AUT"},{"Nation":"ba BIH","n":2,"y":0.289435600578871,"name":"ba BIH"},{"Nation":"be BEL","n":12,"y":1.73661360347323,"name":"be BEL"},{"Nation":"bf BFA","n":1,"y":0.144717800289436,"name":"bf BFA"},{"Nation":"br BRA","n":29,"y":4.19681620839363,"name":"br BRA"},{"Nation":"cd COD","n":3,"y":0.434153400868307,"name":"cd COD"},{"Nation":"ch SUI","n":5,"y":0.723589001447178,"name":"ch SUI"},{"Nation":"ci CIV","n":8,"y":1.15774240231548,"name":"ci CIV"},{"Nation":"cl CHI","n":1,"y":0.144717800289436,"name":"cl CHI"},{"Nation":"cm CMR","n":2,"y":0.289435600578871,"name":"cm CMR"},{"Nation":"co COL","n":6,"y":0.868306801736614,"name":"co COL"},{"Nation":"cz CZE","n":4,"y":0.578871201157742,"name":"cz CZE"},{"Nation":"de GER","n":10,"y":1.44717800289436,"name":"de GER"},{"Nation":"dk DEN","n":15,"y":2.17076700434153,"name":"dk DEN"},{"Nation":"dz ALG","n":2,"y":0.289435600578871,"name":"dz ALG"},{"Nation":"ec ECU","n":2,"y":0.289435600578871,"name":"ec ECU"},{"Nation":"ee EST","n":1,"y":0.144717800289436,"name":"ee EST"},{"Nation":"eg EGY","n":3,"y":0.434153400868307,"name":"eg EGY"},{"Nation":"eng ENG","n":277,"y":40.0868306801737,"name":"eng ENG"},{"Nation":"es ESP","n":34,"y":4.92040520984081,"name":"es ESP"},{"Nation":"fi FIN","n":3,"y":0.434153400868307,"name":"fi FIN"},{"Nation":"fr FRA","n":37,"y":5.35455861070912,"name":"fr FRA"},{"Nation":"ga GAB","n":1,"y":0.144717800289436,"name":"ga GAB"},{"Nation":"gd GRN","n":1,"y":0.144717800289436,"name":"gd GRN"},{"Nation":"gh GHA","n":6,"y":0.868306801736614,"name":"gh GHA"},{"Nation":"gn GUI","n":2,"y":0.289435600578871,"name":"gn GUI"},{"Nation":"gr GRE","n":3,"y":0.434153400868307,"name":"gr GRE"},{"Nation":"hr CRO","n":2,"y":0.289435600578871,"name":"hr CRO"},{"Nation":"ie IRL","n":24,"y":3.47322720694645,"name":"ie IRL"},{"Nation":"ir IRN","n":1,"y":0.144717800289436,"name":"ir IRN"},{"Nation":"is ISL","n":2,"y":0.289435600578871,"name":"is ISL"},{"Nation":"it ITA","n":5,"y":0.723589001447178,"name":"it ITA"},{"Nation":"jm JAM","n":3,"y":0.434153400868307,"name":"jm JAM"},{"Nation":"jp JPN","n":2,"y":0.289435600578871,"name":"jp JPN"},{"Nation":"kr KOR","n":2,"y":0.289435600578871,"name":"kr KOR"},{"Nation":"ma MAR","n":4,"y":0.578871201157742,"name":"ma MAR"},{"Nation":"ml MLI","n":3,"y":0.434153400868307,"name":"ml MLI"},{"Nation":"mx MEX","n":2,"y":0.289435600578871,"name":"mx MEX"},{"Nation":"ng NGA","n":9,"y":1.30246020260492,"name":"ng NGA"},{"Nation":"nir NIR","n":7,"y":1.01302460202605,"name":"nir NIR"},{"Nation":"nl NED","n":19,"y":2.74963820549928,"name":"nl NED"},{"Nation":"no NOR","n":7,"y":1.01302460202605,"name":"no NOR"},{"Nation":"nz NZL","n":2,"y":0.289435600578871,"name":"nz NZL"},{"Nation":"pl POL","n":7,"y":1.01302460202605,"name":"pl POL"},{"Nation":"pt POR","n":22,"y":3.18379160636758,"name":"pt POR"},{"Nation":"py PAR","n":1,"y":0.144717800289436,"name":"py PAR"},{"Nation":"ro ROU","n":1,"y":0.144717800289436,"name":"ro ROU"},{"Nation":"rs SRB","n":2,"y":0.289435600578871,"name":"rs SRB"},{"Nation":"sct SCO","n":27,"y":3.90738060781476,"name":"sct SCO"},{"Nation":"se SWE","n":7,"y":1.01302460202605,"name":"se SWE"},{"Nation":"sk SVK","n":2,"y":0.289435600578871,"name":"sk SVK"},{"Nation":"sl SLE","n":1,"y":0.144717800289436,"name":"sl SLE"},{"Nation":"sn SEN","n":5,"y":0.723589001447178,"name":"sn SEN"},{"Nation":"tn TUN","n":1,"y":0.144717800289436,"name":"tn TUN"},{"Nation":"tr TUR","n":6,"y":0.868306801736614,"name":"tr TUR"},{"Nation":"ua UKR","n":3,"y":0.434153400868307,"name":"ua UKR"},{"Nation":"us USA","n":4,"y":0.578871201157742,"name":"us USA"},{"Nation":"uy URU","n":2,"y":0.289435600578871,"name":"uy URU"},{"Nation":"ve VEN","n":1,"y":0.144717800289436,"name":"ve VEN"},{"Nation":"wls WAL","n":17,"y":2.46020260492041,"name":"wls WAL"},{"Nation":"xk KVX","n":1,"y":0.144717800289436,"name":"xk KVX"},{"Nation":"zm ZAM","n":2,"y":0.289435600578871,"name":"zm ZAM"},{"Nation":"zw ZIM","n":1,"y":0.144717800289436,"name":"zw ZIM"}],"type":"pie","innerSize":"50%","showInLegend":false}],"xAxis":{"type":"category","title":{"text":"Nation"},"categories":null}},"theme":{"colors":["#f1c40f","#2ecc71","#9b59b6","#e74c3c","#34495e","#3498db","#1abc9c","#f39c12","#d35400"],"chart":{"backgroundColor":"#ECF0F1"},"xAxis":{"gridLineDashStyle":"Dash","gridLineWidth":1,"gridLineColor":"#BDC3C7","lineColor":"#BDC3C7","minorGridLineColor":"#BDC3C7","tickColor":"#BDC3C7","tickWidth":1},"yAxis":{"gridLineDashStyle":"Dash","gridLineColor":"#BDC3C7","lineColor":"#BDC3C7","minorGridLineColor":"#BDC3C7","tickColor":"#BDC3C7","tickWidth":1},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#34495e","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
-
-Vidimo da je veća zastupljenost igrača ostalih nacionalnosti s obzirom
-na broj igrača engleske nacionalnosti.
 
 Također zanima nas omjer igrača engleske nacionalnosti u Premier ligi i
 ostalih nacionalnosti
@@ -797,7 +775,7 @@ engleziStranci <- rbind(englezi,ostali)
 ggplot(engleziStranci,aes(x=Nation,fill=Nation)) + geom_bar() + geom_text(stat='count', aes(label=..count..), vjust=-1) + ylim(0,440)
 ```
 
-![](PremierLeagueEDA_files/figure-gfm/unnamed-chunk-30-1.png)<!-- -->
+![](PremierLeagueEDA_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
 
 Kao doprinos timu u obzir uzimamo svekupune golove i asistencije
 ostvarene od igrača jer stupac *golovi i asistencije po 90 minuta* ne
@@ -837,7 +815,7 @@ igrači ostalih nacionalnosti.
 ggplot(kontigencijskaTablica,aes(x=Team,y=doprinos,fill=Nation)) + geom_bar(stat="identity",position = "dodge") + theme(axis.text.x = element_text(angle = 90)) +ylab("Ukupan doprinos")
 ```
 
-![](PremierLeagueEDA_files/figure-gfm/unnamed-chunk-34-1.png)<!-- -->
+![](PremierLeagueEDA_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
 
 Iz grafa je vidljivo da veći doprinos ekipama donose strani igrači što
 nas ne bi trebalo ni čuditi pošto je u engleskoj ligi 414 stranih igrača
@@ -1023,7 +1001,7 @@ histZabGol2 <- ggplot(napadaci5,aes(x=xG)) + geom_histogram(bins=20,colour=4,fil
 grid.arrange(histZabGol1,histZabGol2,ncol=2)
 ```
 
-![](PremierLeagueEDA_files/figure-gfm/unnamed-chunk-41-1.png)<!-- -->
+![](PremierLeagueEDA_files/figure-gfm/unnamed-chunk-40-1.png)<!-- -->
 
 Iz oba grafa je vidljivo da podatci ne dolaze iz normalne distribucije.
 
@@ -1062,7 +1040,7 @@ boxplotxG <- ggplot(napadaci5, aes(y=xG)) + geom_boxplot(fill="white") +ggtitle(
 grid.arrange(boxplotGls,boxplotxG,ncol=2)
 ```
 
-![](PremierLeagueEDA_files/figure-gfm/unnamed-chunk-43-1.png)<!-- -->
+![](PremierLeagueEDA_files/figure-gfm/unnamed-chunk-42-1.png)<!-- -->
 
 #### Testiranje hipoteze
 
